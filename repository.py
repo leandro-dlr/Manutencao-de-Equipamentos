@@ -2,7 +2,7 @@ import json
 from pathlib import Path 
 from models import DocumentosManutencao
 
-CAMINHO_JSON = Path("storage/metadata/documentos,json")
+CAMINHO_JSON = Path("storage/metadata/documentos.json")
 
 
 def carregar_metadados() -> list[DocumentosManutencao]:
