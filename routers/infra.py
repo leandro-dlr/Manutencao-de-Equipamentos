@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from services.backup_service import criar_backup_geral, listar_arquivos_backup
-from services.integrity_service import verificar_integridade_global
+from services.integrity_service import verificar_integridade_global, verificar_integridade_por_id
+
 
 router = APIRouter()
 
@@ -11,6 +12,10 @@ def gerar_backup():
 @router.get("/backups")
 def listar_backups():
     return listar_arquivos_backup()
+
+@router.get("/integridade/{id}")
+def checar_integridade_documento(id: str):
+    return verificar_integridade_por_id(id)
 
 @router.get("/integridade")
 def checar_integridade_global():

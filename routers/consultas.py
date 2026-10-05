@@ -53,6 +53,38 @@ def filtrar_documentos(
 
     return resultado
 
+# F16 Equipamentos Problemáticos
+@router.get("/documentos/relatorios/falhas-frequentes")
+def relatorio_falhas_frequentes():
+    documentos = carregar_metadados()
+    
+    # Filtra acessando os atributos do objeto Pydantic
+    corretivas = []
+    for doc in documentos:
+        tipo = doc.tipo_manutencao
+        # Verifica se existe e se é corretiva
+        if tipo and str(tipo).upper() == "CORRETIVA":
+            corretivas.append(doc)
+    
+    if not corretivas:
+        return {"mensagem": "Nenhum registro de falha corretiva encontrado!"}
+        
+    # Conta quantas quebras cada equipamento teve
+    ranking = {}
+    for doc in corretivas:
+        equip = doc.equipamento or "Desconhecido"
+        ranking[equip] = ranking.get(equip, 0) + 1
+        
+    # Ordena do equipamento que mais quebra para o que menos quebra
+    ranking_ordenado = sorted(ranking.items(), key=lambda x: x[1], reverse=True)
+    
+    # Formata a resposta
+    resultado = [{"equipamento": item[0], "quantidade_falhas": item[1]} for item in ranking_ordenado]
+    
+    return {
+        "total_falhas_registadas": len(corretivas),
+        "ranking_problematicos": resultado
+    }
 
 #F3 - CONSULTA POR ID
 @router.get("/documentos/{id}")
