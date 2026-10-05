@@ -1,19 +1,19 @@
 [
     {
-        "id": "2",
-        "nome_original": "foto_correia_rompida.jpg",
-        "nome_armazenado": "2_foto_correia_rompida.jpg",
+        "id": "1",
+        "nome_original": "roronoa-zoro-green-5120x2880-18358.jpg",
+        "nome_armazenado": "1.jpg",
         "extensao": ".jpg",
         "tipo_mime": "image/jpeg",
-        "tamanho": 256000,
-        "categoria": "Registro Fotográfico",
-        "descricao": "Rompimento da correia dentada do motor auxiliar",
-        "data_upload": "2026-09-14T11:15:00",
-        "sha256": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a",
-        "equipamento": "Torno Mecânico",
-        "patrimonio": "MEC-045",
-        "tipo_manutencao": "Corretiva",
-        "tecnico": "Ana Souza",
-        "data_manutencao": "2026-09-14"
+        "tamanho": 6277095,
+        "categoria": "string",
+        "descricao": "Foto wallpaper Roronoa Zoro",
+        "equipamento": "kitetsu",
+        "patrimonio": "16032006",
+        "tipo_manutencao": "string",
+        "tecnico": "Leandro",
+        "data_manutencao": "2026-10-05",
+        "data_upload": "2026-10-05T00:37:58.191536",
+        "sha256": "2e48842c9e5badf53435d2fd2dc0a60f645e822016e0cefd7c65107fc50es3ac"
     }
 ]

@@ -21,3 +21,9 @@ storage/documentos/*
 storage/metadata/*
 !storage/documentos/.gitkeep
 !storage/metadata/.gitkeep
+
+# Ficheiros de logs e backups
+storage/backups/*
+storage/logs/*
+!storage/backups/.gitkeep
+!storage/logs/.gitkeep

@@ -13,6 +13,46 @@ def listar_documentos():
     dados = carregar_metadados()
     return dados
 
+#F7 - FILTRAGEM COMBINADA
+@router.get("/documentos/filtrar")
+def filtrar_documentos(
+    categoria: str | None = None,
+    extensao: str | None = None,
+    patrimonio: str | None = None,
+    tecnico: str | None = None,
+    tipo_manutencao: str | None = None,
+):
+
+    dados = carregar_metadados()
+
+    resultado = []
+
+    for documento in dados:
+        passou = True # assume q o documento passa em todos os filtros
+
+        if categoria is not None and documento.categoria != categoria:
+            passou = False
+        
+        if extensao is not None and documento.extensao != extensao:
+            passou = False
+
+        if patrimonio is not None and documento.patrimonio != patrimonio:
+            passou = False
+        
+        if tecnico is not None and documento.tecnico != tecnico:
+            passou = False
+        
+        if tipo_manutencao is not None and documento.tipo_manutencao != tipo_manutencao:
+            passou = False
+
+        if passou:
+            resultado.append(documento)
+
+    if len(resultado) == 0:
+        return {"mensagem": "Nenhum documento encontrado com os filtros aplicados"}
+
+    return resultado
+
 
 #F3 - CONSULTA POR ID
 @router.get("/documentos/{id}")
@@ -59,42 +99,3 @@ def estatisticas():
         "distribuicao_por_tipo_manutencao": por_tipo_manutencao,
     }
 
-#F7 - FILTRAGEM COMBINADA
-@router.get("/documentos/filtrar")
-def filtrar_documentos(
-    categoria: str | None = None,
-    extensao: str | None = None,
-    patrimonio: str | None = None,
-    tecnico: str | None = None,
-    tipo_manutencao: str | None = None,
-):
-
-    dados = carregar_metadados()
-
-    resultado = []
-
-    for documento in dados:
-        passou = True # assume q o documento passa em todos os filtros
-
-        if categoria is not None and documento.categoria != categoria:
-            passou = False
-        
-        if extensao is not None and documento.extensao != extensao:
-            passou = False
-
-        if patrimonio is not None and documento.patrimonio != patrimonio:
-            passou = False
-        
-        if tecnico is not None and documento.tecnico != tecnico:
-            passou = False
-        
-        if tipo_manutencao is not None and documento.tipo_manutencao != tipo_manutencao:
-            passou = False
-
-        if passou:
-            resultado.append(documento)
-
-    if len(resultado) == 0:
-        return {"mensagem": "Nenhum documento encontrado com os filtros aplicados"}
-
-    return resultado
