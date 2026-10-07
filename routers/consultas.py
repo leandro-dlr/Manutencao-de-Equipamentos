@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
 import csv
 import io 
 
@@ -19,10 +19,12 @@ def listar_documentos():
 def consultar_documentos(id: str):
     dados = carregar_metadados()
     
+    #vai percorrer a lista procurando ID
     for documento in dados:
         if documento.id == id:
             return documento
 
+    #se terminar sem encontrar nada, cai aqui
     raise HTTPException(status_code = 404, detail = "Documento não encontrado")
 
 #F8 - ESTATÍSTICAS DO COFRE
@@ -98,3 +100,4 @@ def filtrar_documentos(
         return {"mensagem": "Nenhum documento encontrado com os filtros aplicados"}
 
     return resultado
+

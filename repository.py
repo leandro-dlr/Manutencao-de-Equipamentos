@@ -1,8 +1,10 @@
+
 import json
-from pathlib import Path 
+from pathlib import Path
 from models import DocumentosManutencao
 
-CAMINHO_JSON = Path("storage/metadata/documentos,json")
+PASTA_RAIZ = Path(__file__).parent
+CAMINHO_JSON = PASTA_RAIZ / "storage" / "metadata" / "documentos.json"
 
 
 def carregar_metadados() -> list[DocumentosManutencao]:
@@ -10,4 +12,4 @@ def carregar_metadados() -> list[DocumentosManutencao]:
         return []
     with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
         dados_brutos = json.load(f)
-    return[DocumentosManutencao(**item) for item in dados_brutos]
+    return [DocumentosManutencao(**item) for item in dados_brutos]
