@@ -32,26 +32,20 @@ def filtrar_documentos(
 
         if categoria is not None and documento.categoria != categoria:
             passou = False
-        
         if extensao is not None and documento.extensao != extensao:
             passou = False
-
         if patrimonio is not None and documento.patrimonio != patrimonio:
             passou = False
-        
         if tecnico is not None and documento.tecnico != tecnico:
             passou = False
-        
         if tipo_manutencao is not None and documento.tipo_manutencao != tipo_manutencao:
             passou = False
-
         if passou:
             resultado.append(documento)
-
     if len(resultado) == 0:
         return {"mensagem": "Nenhum documento encontrado com os filtros aplicados"}
-
     return resultado
+
 
 # F16 Equipamentos Problemáticos
 @router.get("/documentos/relatorios/falhas-frequentes")
@@ -86,18 +80,6 @@ def relatorio_falhas_frequentes():
         "ranking_problematicos": resultado
     }
 
-#F3 - CONSULTA POR ID
-@router.get("/documentos/{id}")
-def consultar_documentos(id: str):
-    dados = carregar_metadados()
-    
-    #vai percorrer a lista procurando ID
-    for documento in dados:
-        if documento.id == id:
-            return documento
-
-    #se terminar sem encontrar nada, cai aqui
-    raise HTTPException(status_code = 404, detail = "Documento não encontrado")
 
 #F8 - ESTATÍSTICAS DO COFRE
 @router.get("/estatísticas")
@@ -133,43 +115,48 @@ def estatisticas():
         "distribuicao_por_tipo_manutencao": por_tipo_manutencao,
     }
 
-#F7 - FILTRAGEM COMBINADA
-@router.get("/documentos/filtrar")
-def filtrar_documentos(
-    categoria: str | None = None,
-    extensao: str | None = None,
-    patrimonio: str | None = None,
-    tecnico: str | None = None,
-    tipo_manutencao: str | None = None,
-):
 
+    # F13 - EXPORTAÇÃO PARA CSV
+@router.get("/documentos/exportar-csv")
+def exportar_csv():
     dados = carregar_metadados()
 
-    resultado = []
+    if len(dados) == 0:
+        raise HTTPException(status_code=404, detail="Nenhum documento para exportar")
+    caminho_csv = "catalogo.csv"
+    arquivo = open(caminho_csv, "w", encoding="utf-8")
 
+    # escreve a primeira linha, com o nome das colunas
+    arquivo.write("id,nome_original,extensao,categoria,equipamento,patrimonio,tipo_manutencao,tecnico,data_manutencao\n")
+
+    # escreve uma linha para cada documento
     for documento in dados:
-        passou = True # assume q o documento passa em todos os filtros
+        linha = str(documento.id) + "," + \
+                str(documento.nome_original) + "," + \
+                str(documento.extensao) + "," + \
+                str(documento.categoria) + "," + \
+                str(documento.equipamento) + "," + \
+                str(documento.patrimonio) + "," + \
+                str(documento.tipo_manutencao) + "," + \
+                str(documento.tecnico) + "," + \
+                str(documento.data_manutencao) + "\n"
 
-        if categoria is not None and documento.categoria != categoria:
-            passou = False
-        
-        if extensao is not None and documento.extensao != extensao:
-            passou = False
+        arquivo.write(linha)
+    arquivo.close()
 
-        if patrimonio is not None and documento.patrimonio != patrimonio:
-            passou = False
-        
-        if tecnico is not None and documento.tecnico != tecnico:
-            passou = False
-        
-        if tipo_manutencao is not None and documento.tipo_manutencao != tipo_manutencao:
-            passou = False
+    return FileResponse(caminho_csv, media_type="text/csv", filename="catalogo.csv")
 
-        if passou:
-            resultado.append(documento)
+    #F3 - CONSULTA POR ID
+@router.get("/documentos/{id}")
+def consultar_documentos(id: str):
+    dados = carregar_metadados()
+    
+    #vai percorrer a lista procurando ID
+    for documento in dados:
+        if documento.id == id:
+            return documento
 
-    if len(resultado) == 0:
-        return {"mensagem": "Nenhum documento encontrado com os filtros aplicados"}
+    #se terminar sem encontrar nada, cai aqui
+    raise HTTPException(status_code = 404, detail = "Documento não encontrado")
 
-    return resultado
 
