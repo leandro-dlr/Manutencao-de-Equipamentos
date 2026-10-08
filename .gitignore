@@ -1,0 +1,30 @@
+# Ambiente Virtual do Python
+venv/
+ENV/
+env/
+
+# Ficheiros compilados e cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações locais de editores (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ficheiros do sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ficheiros e metadados de teste locais
+storage/documentos/*
+storage/metadata/*
+!storage/documentos/.gitkeep
+!storage/metadata/.gitkeep
+
+# Ficheiros de logs e backups
+storage/backups/*
+storage/logs/*
+!storage/backups/.gitkeep
+!storage/logs/.gitkeep__pycache__/
+*.pyc

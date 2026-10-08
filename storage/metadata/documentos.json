@@ -1,36 +1,19 @@
 [
-  {
-    "id": "1",
-    "nome_original": "relatorio_termico_setembro.pdf",
-    "nome_armazenado": "1_relatorio_termico_setembro.pdf",
-    "extensao": ".pdf",
-    "tipo_mime": "application/pdf",
-    "tamanho": 1048576,
-    "categoria": "Relatório",
-    "descricao": "Laudo termográfico do painel de controle",
-    "data_upload": "2026-09-14T10:30:00",
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "equipamento": "Painel Elétrico Principal",
-    "patrimonio": "ELT-001",
-    "tipo_manutencao": "Preditiva",
-    "tecnico": "Carlos Silva",
-    "data_manutencao": "2026-09-12"
-  },
-  {
-    "id": "2",
-    "nome_original": "foto_correia_rompida.jpg",
-    "nome_armazenado": "2_foto_correia_rompida.jpg",
-    "extensao": ".jpg",
-    "tipo_mime": "image/jpeg",
-    "tamanho": 256000,
-    "categoria": "Registro Fotográfico",
-    "descricao": "Rompimento da correia dentada do motor auxiliar",
-    "data_upload": "2026-09-14T11:15:00",
-    "sha256": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a",
-    "equipamento": "Torno Mecânico",
-    "patrimonio": "MEC-045",
-    "tipo_manutencao": "Corretiva",
-    "tecnico": "Ana Souza",
-    "data_manutencao": "2026-09-14"
-  }
+    {
+        "id": "1",
+        "nome_original": "roronoa-zoro-green-5120x2880-18358.jpg",
+        "nome_armazenado": "1.jpg",
+        "extensao": ".jpg",
+        "tipo_mime": "image/jpeg",
+        "tamanho": 6277095,
+        "categoria": "string",
+        "descricao": "string",
+        "equipamento": "string",
+        "patrimonio": "string",
+        "tipo_manutencao": "corretiva",
+        "tecnico": "string",
+        "data_manutencao": "2026-10-05",
+        "data_upload": "2026-10-05T00:37:58.191536",
+        "sha256": "2e48842c9e5badf53435d2fd2dc0a60f645e822016e0cefd7c65107fc50es3ac"
+    }
 ]
