@@ -50,7 +50,7 @@ O sistema disponibiliza um conjunto unificado de recursos acessiveis por rotas H
 - Filtragem Combinada: Pesquisa avancada de documentos utilizando multiplos criterios simultaneos (por patrimonio, tecnico, tipo de manutencao, categoria ou extensao)[cite: 2].
 - Estatisticas do Cofre: Calculo e exibicao de metricas consolidadas sobre o uso de espaco em disco, distribuicao de extensoes e contagem por tipo de manutencao[cite: 2].
 - Exportacao do Catalogo: Exportacao de todo o catalogo de metadados para formato CSV[cite: 2].
-- Dossie de Vida Util do Patrimonio: Relatorio analitico consolidado do historico do equipamento (endpoint GET /equipamentos/{patrimonio}/dossie), compilando historico de intervencoes, lista de tecnicos atuantes, proporcao entre manutencoes preventivas e corretivas e a data da ultima ocorrencia.
+- Relatorio de Falhas Frequentes: Rota analitica (endpoint GET /documentos/relatorios/falhas-frequentes) que processa os dados do sistema para gerar um ranking dos equipamentos com maior indice de falhas, ordenando-os pela quantidade de manutencoes do tipo "CORRETIVA", auxiliando na tomada de decisao dos gestores.
 
 ### Confiabilidade, Seguranca e Infraestrutura
 - Verificacao de Integridade Individual: Checagem de integridade de um arquivo especifico recalculando o seu hash SHA-256 no disco e comparando com o hash gravado no JSON[cite: 2].
