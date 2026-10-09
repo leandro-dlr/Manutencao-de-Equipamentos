@@ -1,2 +1,17 @@
 id,nome_original,extensao,categoria,equipamento,patrimonio,tipo_manutencao,tecnico,data_manutencao
-1,roronoa-zoro-green-5120x2880-18358.jpg,.jpg,string,string,string,corretiva,string,2026-10-05
+1,torno mecanico 1.jpg,.jpg,Foto da peça,Torno Mecânico,MEC-045,CORRETIVA,Leandro,2026-10-09
+2,Fresadora CNC 1.pdf,.pdf,Laudo Técnico,Fresadora CNC,FRE-012,PREVENTIVA,Kauã,2026-10-09
+3,Compressor de ar 1.pdf,.pdf,Relatório,Compressor de Ar,COM-999,PREDITIVA,Analu,2026-10-09
+4,Torno mecanico 2.txt,.txt,Manual,Torno Mecânico,MEC-045,PREVENTIVA,Kauã,2026-10-09
+5,ponte-rolante-com-cabo-de-aco.jpg,.jpg,Foto da peça,Ponte Rolante,PON-101,CORRETIVA,Analu,2026-10-09
+6,empilhadeira 1.jpg,.jpg,Laudo Técnico,Empilhadeira,EMP-005,PREVENTIVA,Leandro,2026-10-09
+7,Gerador a diesel 1.docx,.docx,Relatório,Gerador a Diesel,GER-088,CORRETIVA,Kauã,2026-10-09
+8,Torno mecanico 3.txt,.txt,Manual,Torno Mecânico,MEC-045,CORRETIVA,Leandro,2026-10-09
+9,válvula compressor de ar.jpg,.jpg,Foto da peça,Compressor de Ar,COM-999,CORRETIVA,Analu,2026-10-09
+10,Laudo fresadora.pdf,.pdf,Laudo Técnico,Fresadora CNC,FRE-012,CORRETIVA,Kauã,2026-10-09
+11,Estufa de secagem.txt,.txt,Relatório,Estufa de Secagem,EST-022,PREDITIVA,Analu,2026-10-09
+12,Manual ponte rolante.txt,.txt,Manual,Ponte Rolante,PON-101,PREVENTIVA,Leandro,2026-10-09
+13,motor gerador a diesel.jpg,.jpg,Foto da peça,Gerador a Diesel,GER-088,CORRETIVA,Kauã,2026-10-09
+14,Relatório empilhadeira.docx,.docx,Relatório,Empilhadeira,EMP-005,CORRETIVA,Analu,2026-10-09
+15,Pino do coquilho do guindaste zulaine75.jpeg,.jpeg,Foto da peça,Guindaste,GUI-075,CORRETIVA,Leandro,2026-10-09
+16,Manual ponte rolante.txt,.txt,bandeclay,string,string,string,string,2026-10-09

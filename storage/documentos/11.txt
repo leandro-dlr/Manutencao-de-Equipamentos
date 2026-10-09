@@ -1,0 +1,19 @@
+﻿Documento 11
+
+
+categoria: RELATORIO
+
+
+descrição: Relatório de análise termográfica para avaliar o desgaste dos resistores de aquecimento.
+
+
+equipamento: Estufa de Secagem
+
+
+patrimonio: EST-022
+
+
+tipo_manutencao: PREDITIVA
+
+
+tecnico: Analu

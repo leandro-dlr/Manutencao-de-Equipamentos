@@ -1,0 +1,22 @@
+﻿Documento 4
+
+
+categoria: MANUAL
+
+
+descrição: Manual de fabricante utilizado para inspeção de rotina e troca de fluidos lubrificantes.
+
+
+equipamento: Torno Mecânico
+
+
+patrimonio: MEC-045
+
+
+tipo_manutencao: PREVENTIVA
+
+
+tecnico: Marcos Santos
+
+
+data_manutencao: 2026-09-20

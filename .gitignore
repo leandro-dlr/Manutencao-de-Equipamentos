@@ -6,6 +6,7 @@ env/
 # Ficheiros compilados e cache do Python
 __pycache__/
 *.py[cod]
+*.pyc
 *$py.class
 
 # Configurações locais de editores (VS Code, PyCharm, etc.)
@@ -17,8 +18,8 @@ __pycache__/
 Thumbs.db
 
 # Ficheiros e metadados de teste locais
-storage/documentos/*
 storage/metadata/*
+!storage/metadata/documentos.json
 !storage/documentos/.gitkeep
 !storage/metadata/.gitkeep
 
@@ -26,5 +27,4 @@ storage/metadata/*
 storage/backups/*
 storage/logs/*
 !storage/backups/.gitkeep
-!storage/logs/.gitkeep__pycache__/
-*.pyc
+!storage/logs/.gitkeep

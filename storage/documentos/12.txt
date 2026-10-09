@@ -1,0 +1,19 @@
+﻿Documento 12
+
+
+categoria: MANUAL
+
+
+descrição: Manual utilizado para mapeamento preventivo do estado de conservação dos cabos.
+
+
+equipamento: Ponte Rolante
+
+
+patrimonio: PON-101
+
+
+tipo_manutencao: PREVENTIVA
+
+
+tecnico: Leandro

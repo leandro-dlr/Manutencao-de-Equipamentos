@@ -1,0 +1,19 @@
+﻿Documento 8
+
+
+categoria: MANUAL
+
+
+descrição: Consulta ao manual elétrico para reparo num curto-circuito no painel de controle.
+
+
+equipamento: Torno Mecânico
+
+
+patrimonio: MEC-045
+
+
+tipo_manutencao: CORRETIVA
+
+
+tecnico: Leandro
